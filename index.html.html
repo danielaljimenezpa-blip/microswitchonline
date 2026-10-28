@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Micrositio académico sobre Nintendo Switch Online, sus beneficios y la campaña Descubre tu Switch.">
+<title>Nintendo Switch Online | Descubre tu Switch</title>
+<style>
+:root{--red:#e60012;--dark:#171717;--ink:#242424;--muted:#666;--cream:#fff8f5;--line:#ece6e4;--white:#fff;--pink:#ffe8e8}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.nav{max-width:1120px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:900;font-size:1.15rem;letter-spacing:-.5px}.brand span{color:var(--red)}
+nav{display:flex;gap:18px;flex-wrap:wrap}nav a{text-decoration:none;font-size:.9rem;font-weight:700}nav a:hover{color:var(--red)}
+.hero{background:linear-gradient(125deg,#171717 0%,#292020 58%,#7e0912 100%);color:#fff;overflow:hidden}
+.hero-inner{max-width:1120px;margin:auto;padding:84px 22px 76px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:42px}
+.eyebrow{color:#ffb8bd;text-transform:uppercase;font-size:.78rem;font-weight:800;letter-spacing:2px}
+h1{font-size:clamp(2.8rem,6vw,5rem);line-height:.98;letter-spacing:-2px;margin:14px 0 22px}
+h1 span{color:#ff3a49}.hero p{max-width:600px;color:#f2e9e9;font-size:1.12rem}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;padding:13px 20px;border-radius:9px;font-weight:800;margin-top:14px}.btn:hover{background:#bf0010}
+.console-art{min-height:260px;display:flex;align-items:center;justify-content:center;position:relative}
+.console{width:min(100%,340px);height:205px;border:12px solid #e9e9e9;border-radius:22px;background:#262626;box-shadow:0 25px 55px #0008;display:flex;align-items:center;justify-content:center;transform:rotate(-5deg);position:relative}
+.screen{width:76%;height:82%;border:5px solid #111;border-radius:8px;background:linear-gradient(140deg,#f4b6b9,#ed1829 50%,#252525);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-weight:900;font-size:1.5rem}
+.joy{position:absolute;top:30px;width:34px;height:150px;border-radius:18px;background:#e60012;border:3px solid #f6f6f6;box-shadow:0 8px 18px #0005}.joy.left{left:-25px}.joy.right{right:-25px;background:#26a8bd}
+section{padding:70px 22px}.container{max-width:1050px;margin:auto}.section-label{color:var(--red);text-transform:uppercase;letter-spacing:1.8px;font-size:.75rem;font-weight:900}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.1;letter-spacing:-1px;margin:9px 0 16px;color:var(--dark)}
+.lead{font-size:1.08rem;color:var(--muted);max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.card{border:1px solid var(--line);border-radius:16px;padding:23px;background:#fff;box-shadow:0 7px 22px #17171708}
+.icon{width:48px;height:48px;border-radius:13px;background:var(--pink);display:grid;place-items:center;font-size:1.55rem;margin-bottom:14px}
+.card h3{margin:0 0 8px;font-size:1.12rem}.card p{margin:0;color:var(--muted);font-size:.96rem}
+.soft{background:var(--cream)}
+.value{background:var(--red);color:#fff;border-radius:20px;padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin-top:28px}
+.value h3{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.15;margin:8px 0}.value p{margin:0;color:#fff0f0}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.pill{background:#fff;color:#9b0010;padding:8px 12px;border-radius:99px;font-size:.88rem;font-weight:800}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:30px}
+.step{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px 10px;text-align:center;font-weight:800;font-size:.9rem}
+.step b{display:block;font-size:1.7rem;margin-bottom:8px}
+.campaign{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.social{border-radius:16px;padding:24px;background:var(--dark);color:#fff}.social:nth-child(2){background:#b90011}.social:nth-child(3){background:#303030}
+.social .big{font-size:2rem}.social h3{margin:8px 0}.social p{color:#f2e8e8;margin:0}
+.competitors{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}
+.competitor{border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;background:#fff}.competitor strong{display:block;font-size:1.08rem}.competitor small{color:var(--muted)}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:25px}
+.metric{background:#fff;border:1px solid var(--line);padding:19px;border-radius:14px}.metric strong{display:block;color:var(--red);font-size:1.05rem;margin-bottom:5px}.metric span{font-size:.9rem;color:var(--muted)}
+.note{font-size:.86rem;color:var(--muted);margin-top:20px}
+footer{background:#171717;color:#fff;padding:28px 22px;text-align:center}footer p{margin:4px;color:#d7d7d7;font-size:.9rem}
+@media(max-width:760px){.hero-inner{grid-template-columns:1fr;padding-top:60px}.console-art{min-height:210px}.grid,.campaign{grid-template-columns:1fr 1fr}.value{grid-template-columns:1fr}.steps{grid-template-columns:repeat(3,1fr)}.metric-grid{grid-template-columns:1fr 1fr}nav{gap:10px}nav a{font-size:.78rem}}
+@media(max-width:480px){.nav{align-items:flex-start;flex-direction:column}nav{gap:12px}.grid,.campaign,.competitors{grid-template-columns:1fr}.hero-inner{padding-bottom:48px}.steps{grid-template-columns:repeat(2,1fr)}section{padding:52px 18px}.value{padding:25px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand"><span>●</span> NINTENDO SWITCH ONLINE</div>
+    <nav aria-label="Navegación principal">
+      <a href="#servicio">El servicio</a><a href="#beneficios">Beneficios</a><a href="#campana">Campaña</a><a href="#competencia">Competencia</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Entretenimiento · Conexión · Juegos</div>
+      <h1>Descubre<br>tu <span>Switch.</span></h1>
+      <p>Una mirada a Nintendo Switch Online: un servicio de suscripción que reúne funciones y contenidos para ampliar la experiencia de juego.</p>
+      <a class="btn" href="#servicio">Conoce el servicio ↓</a>
+    </div>
+    <div class="console-art" aria-label="Ilustración decorativa de una consola portátil">
+      <div class="console"><div class="joy left"></div><div class="screen">PLAY<br>MORE</div><div class="joy right"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicio">
+  <div class="container">
+    <div class="section-label">01 · La empresa y el servicio</div>
+    <h2>Nintendo: entretenimiento e innovación</h2>
+    <p class="lead">Nintendo es una empresa japonesa reconocida por sus consolas y videojuegos. Con productos como Nintendo Switch, ofrece distintas formas de disfrutar los videojuegos, tanto en casa como en movimiento.</p>
+    <div class="card" style="margin-top:24px;background:#fff8f5">
+      <h3>¿Qué es Nintendo Switch Online?</h3>
+      <p>Es un servicio de suscripción que amplía la experiencia de juego con funciones en línea, una selección de juegos clásicos y otros beneficios para sus miembros.</p>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="beneficios">
+  <div class="container">
+    <div class="section-label">02 · Lo que incluye</div>
+    <h2>Beneficios principales</h2>
+    <p class="lead">El servicio reúne varias funciones en una membresía. Los beneficios disponibles pueden variar según el plan, el juego y la región.</p>
+    <div class="grid">
+      <article class="card"><div class="icon">🎮</div><h3>Juego en línea</h3><p>Permite jugar en línea con otras personas en juegos compatibles.</p></article>
+      <article class="card"><div class="icon">🕹️</div><h3>Juegos clásicos</h3><p>Acceso a una selección de títulos clásicos para volver a disfrutar experiencias retro.</p></article>
+      <article class="card"><div class="icon">☁️</div><h3>Datos en la nube</h3><p>Respaldo de datos de guardado en juegos compatibles.</p></article>
+      <article class="card"><div class="icon">🎁</div><h3>Ofertas para miembros</h3><p>Beneficios y ofertas especiales disponibles para suscriptores.</p></article>
+      <article class="card"><div class="icon">🎵</div><h3>Nintendo Music</h3><p>Música de juegos de Nintendo mediante la aplicación compatible, según las condiciones del servicio.</p></article>
+      <article class="card"><div class="icon">👨‍👩‍👧‍👦</div><h3>Opción familiar</h3><p>El plan familiar permite compartir la membresía con cuentas incluidas en un grupo familiar, según sus condiciones.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">03 · Público objetivo</div>
+    <h2>¿Para quién es?</h2>
+    <p class="lead">Jóvenes y adultos interesados en videojuegos, tecnología y entretenimiento, especialmente quienes quieren jugar con amigos, descubrir juegos clásicos y aprovechar funciones adicionales de Nintendo Switch.</p>
+    <div class="value">
+      <div>
+        <div class="eyebrow">Propuesta de valor</div>
+        <h3>“Más formas de disfrutar Nintendo por menos decisiones”.</h3>
+      </div>
+      <div>
+        <p>La idea es presentar el servicio como una forma de ampliar la experiencia de juego y explicar con claridad qué recibe el usuario a cambio del pago.</p>
+        <div class="pills"><span class="pill">Jugar</span><span class="pill">Descubrir</span><span class="pill">Compartir</span><span class="pill">Aprovechar beneficios</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="campana">
+  <div class="container">
+    <div class="section-label">04 · Estrategia de comunicación</div>
+    <h2>Campaña: “Descubre tu Switch”</h2>
+    <p class="lead">Concepto: <strong>“Tu Switch tiene más por descubrir”.</strong> La campaña explica los beneficios de forma visual, breve y sencilla, sin limitarse a mostrar una lista de características.</p>
+    <div class="campaign">
+      <article class="social"><div class="big">▶</div><h3>TikTok</h3><p>Videos de 15–30 segundos con ideas como “¿Sabías que...?” y “¿Qué incluye?”.</p></article>
+      <article class="social"><div class="big">▧</div><h3>Instagram</h3><p>Carruseles que expliquen un beneficio por página: juego en línea, juegos clásicos, nube y ofertas.</p></article>
+      <article class="social"><div class="big">▷</div><h3>YouTube y canales oficiales</h3><p>Videos informativos y demostraciones para conocer el servicio y comparar los planes.</p></article>
+    </div>
+    <div class="card" style="margin-top:20px">
+      <h3>Mensajes de campaña</h3>
+      <p>“Juega en línea con tus amigos” · “Revive juegos clásicos” · “Conoce los beneficios para miembros” · “Descubre todo lo que incluye tu membresía”.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">05 · Experiencia del cliente</div>
+    <h2>Del descubrimiento al uso</h2>
+    <p class="lead">La comunicación debe acompañar al consumidor antes y después de elegir una membresía.</p>
+    <div class="steps">
+      <div class="step"><b>🔎</b>Descubrir</div>
+      <div class="step"><b>📘</b>Informarse</div>
+      <div class="step"><b>⚖️</b>Comparar</div>
+      <div class="step"><b>🎮</b>Probar</div>
+      <div class="step"><b>🛒</b>Comprar</div>
+      <div class="step"><b>⭐</b>Usar</div>
+    </div>
+    <p class="note">La prueba gratuita y la disponibilidad de los planes pueden variar según el mercado. Se recomienda revisar las condiciones oficiales vigentes antes de contratar.</p>
+  </div>
+</section>
+
+<section class="soft" id="competencia">
+  <div class="container">
+    <div class="section-label">06 · Entorno competitivo</div>
+    <h2>¿Con quién compite?</h2>
+    <p class="lead">Nintendo Switch Online participa en el mercado de servicios de suscripción de videojuegos. Los usuarios pueden comparar precio, catálogo y beneficios antes de elegir.</p>
+    <div class="competitors">
+      <div class="competitor"><div class="icon" style="margin:0 auto 12px">🔴</div><strong>Nintendo Switch Online</strong><small>Juego en línea y catálogo clásico</small></div>
+      <div class="competitor"><div class="icon" style="margin:0 auto 12px">🎮</div><strong>PlayStation Plus</strong><small>Servicio de suscripción de PlayStation</small></div>
+      <div class="competitor"><div class="icon" style="margin:0 auto 12px">🟩</div><strong>Xbox Game Pass</strong><small>Servicio de suscripción de Xbox</small></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">07 · Evaluación de la campaña</div>
+    <h2>¿Cómo medir los resultados?</h2>
+    <p class="lead">Estos indicadores ayudan a revisar si la comunicación consigue que más personas conozcan el servicio y consideren suscribirse.</p>
+    <div class="metric-grid">
+      <div class="metric"><strong>Reconocimiento</strong><span>Personas que conocen Nintendo Switch Online.</span></div>
+      <div class="metric"><strong>Interacción</strong><span>Visualizaciones, comentarios, compartidos y guardados.</span></div>
+      <div class="metric"><strong>Interés</strong><span>Visitas a la información de la membresía.</span></div>
+      <div class="metric"><strong>Conversión y retención</strong><span>Nuevas suscripciones y renovaciones.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="container">
+    <div class="section-label">En resumen</div>
+    <h2>Una experiencia que va más allá de jugar</h2>
+    <p class="lead">Nintendo Switch Online puede comunicar mejor su valor mostrando de forma sencilla qué incluye la membresía. La campaña “Descubre tu Switch” propone destacar los juegos clásicos, explicar los beneficios y ayudar al consumidor a comparar lo que recibe por su pago.</p>
+    <a class="btn" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Volver al inicio ↑</a>
+    <p class="note">Micrositio académico elaborado a partir del documento base de la Fase 4. Verifica en los canales oficiales de Nintendo la disponibilidad y las condiciones actuales de cada beneficio.</p>
+  </div>
+</section>
+</main>
+<footer>
+  <p><strong>Nintendo Switch Online · Descubre tu Switch</strong></p>
+  <p>Proyecto académico · Fase 4: estrategia de marketing</p>
+</footer>
+</body>
+</html>
